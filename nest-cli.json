@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/node-serverless-base/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/node-serverless-base/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/node-serverless-base",
+  "projects": {
+    "node-serverless-base": {
+      "type": "application",
+      "root": "apps/node-serverless-base",
+      "entryFile": "main",
+      "sourceRoot": "apps/node-serverless-base/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/node-serverless-base/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "entryFile": "main",
+      "sourceRoot": "apps/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    },
+    "posts": {
+      "type": "application",
+      "root": "apps/posts",
+      "entryFile": "main",
+      "sourceRoot": "apps/posts/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/posts/tsconfig.app.json"
+      }
+    }
+  }
+}

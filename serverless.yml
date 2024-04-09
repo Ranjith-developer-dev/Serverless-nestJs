@@ -1,0 +1,23 @@
+
+service: node-serverless-base
+app: node-serverless-base
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+
+functions:
+  index-function:
+    handler: app/node-serverless-base/src/index.handler
+    events:
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any
